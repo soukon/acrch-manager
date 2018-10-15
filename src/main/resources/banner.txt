@@ -1,0 +1,22 @@
+|***********************************************************************************************************************|
+|                                                                                                                       |
+|                  AAA                  CCCCCCCCCCCCCRRRRRRRRRRRRRRRRR           CCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH   |
+|                 A:::A              CCC::::::::::::CR::::::::::::::::R       CCC::::::::::::CH:::::::H     H:::::::H   |
+|                A:::::A           CC:::::::::::::::CR::::::RRRRRR:::::R    CC:::::::::::::::CH:::::::H     H:::::::H   |
+|               A:::::::A         C:::::CCCCCCCC::::CRR:::::R     R:::::R  C:::::CCCCCCCC::::CHH::::::H     H::::::HH   |
+|              A:::::::::A       C:::::C       CCCCCC  R::::R     R:::::R C:::::C       CCCCCC  H:::::H     H:::::H     |
+|             A:::::A:::::A     C:::::C                R::::R     R:::::RC:::::C                H:::::H     H:::::H     |
+|            A:::::A A:::::A    C:::::C                R::::RRRRRR:::::R C:::::C                H::::::HHHHH::::::H     |
+|           A:::::A   A:::::A   C:::::C                R:::::::::::::RR  C:::::C                H:::::::::::::::::H     |
+|          A:::::A     A:::::A  C:::::C                R::::RRRRRR:::::R C:::::C                H:::::::::::::::::H     |
+|         A:::::AAAAAAAAA:::::A C:::::C                R::::R     R:::::RC:::::C                H::::::HHHHH::::::H     |
+|        A:::::::::::::::::::::AC:::::C                R::::R     R:::::RC:::::C                H:::::H     H:::::H     |
+|       A:::::AAAAAAAAAAAAA:::::AC:::::C       CCCCCC  R::::R     R:::::R C:::::C       CCCCCC  H:::::H     H:::::H     |
+|      A:::::A             A:::::AC:::::CCCCCCCC::::CRR:::::R     R:::::R  C:::::CCCCCCCC::::CHH::::::H     H::::::HH   |
+|     A:::::A               A:::::ACC:::::::::::::::CR::::::R     R:::::R   CC:::::::::::::::CH:::::::H     H:::::::H   |
+|    A:::::A                 A:::::A CCC::::::::::::CR::::::R     R:::::R     CCC::::::::::::CH:::::::H     H:::::::H   |
+|   AAAAAAA                   AAAAAAA   CCCCCCCCCCCCCRRRRRRRR     RRRRRRR        CCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH   |
+|                                                                                                                       |
+|   Spring-Boot-Version: ${spring-boot.version}                                                                         |
+|                                                                                                                       |
+|***********************************************************************************************************************|
