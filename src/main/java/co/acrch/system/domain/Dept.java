@@ -18,14 +18,14 @@ public class Dept implements Serializable {
 	@Id
 	@GeneratedValue(generator = "JDBC")
 	@Column(name = "DEPT_ID")
-	@ExportConfig(value = "编号")
+	@ExportConfig(value = "No.")
 	private Long deptId;
 
 	@Column(name = "PARENT_ID")
 	private Long parentId;
 
 	@Column(name = "DEPT_NAME")
-	@ExportConfig(value = "部门名称")
+	@ExportConfig(value = "部門名")
 	private String deptName;
 
 	@Column(name = "ORDER_NUM")

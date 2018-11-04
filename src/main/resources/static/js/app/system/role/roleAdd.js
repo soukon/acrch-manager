@@ -40,7 +40,7 @@ $(function () {
 
 function closeModal() {
     $("#role-add-button").attr("name", "save");
-    $("#role-add-modal-title").html('新增角色');
+    $("#role-add-modal-title").html('雇用区分追加');
     validator.resetForm();
     $MB.resetJsTree("menuTree");
     $MB.closeAndRestModal("role-add");
@@ -77,12 +77,12 @@ function validateRule() {
         },
         messages: {
             roleName: {
-                required: icon + "请输入角色名称",
-                minlength: icon + "角色名称长度3到10个字符",
-                remote: icon + "该角色名已经存在"
+                required: icon + "雇用区分を入力してください",
+                minlength: icon + "雇用区分を3〜10桁で入力してください",
+                remote: icon + "該当雇用区分が存在しています"
             },
-            remark: icon + "角色描述不能超过50个字符",
-            menuId: icon + "请选择相应菜单权限"
+            remark: icon + "区分説明を50桁以内で入力してください",
+            menuId: icon + "メニュー権限を選択してください"
         }
     });
 }

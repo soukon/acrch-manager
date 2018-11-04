@@ -2,11 +2,11 @@ function updateMenu() {
     var selected = $("#menuTable").bootstrapTreeTable("getSelections");
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要修改的菜单或按钮！');
+        $MB.n_warning('更新したいメニューまたはボタンを選択してください！');
         return;
     }
     if (selected_length > 1) {
-        $MB.n_warning('一次只能修改一个菜单或按钮！');
+        $MB.n_warning('一つメニューまたはボタンを選択して、更新してください！');
         return;
     }
     var menuId = selected[0].id;
@@ -16,7 +16,7 @@ function updateMenu() {
             var $menuTree = $('#menuTree');
             $form.modal();
             var menu = r.msg;
-            $("#menu-add-modal-title").html('修改菜单/按钮');
+            $("#menu-add-modal-title").html('メニュー/ボタン更新');
             $("input:radio[value='" + menu.type + "']").trigger("click");
             $form.find("input[name='menuName']").val(menu.menuName);
             $form.find("input[name='oldMenuName']").val(menu.menuName);

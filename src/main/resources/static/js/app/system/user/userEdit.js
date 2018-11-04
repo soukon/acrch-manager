@@ -2,11 +2,11 @@ function updateUser() {
     var selected = $("#userTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要修改的用户！');
+        $MB.n_warning('更新したいユーザを選択してください！');
         return;
     }
     if (selected_length > 1) {
-        $MB.n_warning('一次只能修改一个用户！');
+        $MB.n_warning('一つユーザを選択して、更新してください！');
         return;
     }
     var userId = selected[0].userId;
@@ -17,7 +17,7 @@ function updateUser() {
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('修改用户');
+            $("#user-add-modal-title").html('ユーザ更新');
             $form.find("input[name='username']").val(user.username).attr("readonly", true);
             $form.find("input[name='oldusername']").val(user.username);
             $form.find("input[name='userId']").val(user.userId);
@@ -32,10 +32,10 @@ function updateUser() {
             var $status = $form.find("input[name='status']");
             if (user.status === '1') {
                 $status.prop("checked", true);
-                $status.parent().next().html('可用');
+                $status.parent().next().html('有効');
             } else {
                 $status.prop("checked", false);
-                $status.parent().next().html('禁用');
+                $status.parent().next().html('ロック');
             }
             $("input:radio[value='" + user.ssex + "']").prop("checked", true);
             $deptTree.jstree().open_all();

@@ -94,45 +94,45 @@ public class RoleController extends BaseController {
         return result == null;
     }
 
-    @Log("新增角色")
+    @Log("雇用区分追加")
     @RequiresPermissions("role:add")
     @RequestMapping("role/add")
     @ResponseBody
     public ResponseBo addRole(Role role, Long[] menuId) {
         try {
             this.roleService.addRole(role, menuId);
-            return ResponseBo.ok("新增角色成功！");
+            return ResponseBo.ok("雇用区分追加成功！");
         } catch (Exception e) {
-            log.error("新增角色失败", e);
-            return ResponseBo.error("新增角色失败，请联系网站管理员！");
+            log.error("雇用区分追加失败", e);
+            return ResponseBo.error("雇用区分追加失败，请联系网站管理员！");
         }
     }
 
-    @Log("删除角色")
+    @Log("雇用区分削除")
     @RequiresPermissions("role:delete")
     @RequestMapping("role/delete")
     @ResponseBody
     public ResponseBo deleteRoles(String ids) {
         try {
             this.roleService.deleteRoles(ids);
-            return ResponseBo.ok("删除角色成功！");
+            return ResponseBo.ok("雇用区分削除成功！");
         } catch (Exception e) {
-            log.error("删除角色失败", e);
-            return ResponseBo.error("删除角色失败，请联系网站管理员！");
+            log.error("雇用区分削除失败", e);
+            return ResponseBo.error("雇用区分削除失败，请联系网站管理员！");
         }
     }
 
-    @Log("修改角色")
+    @Log("雇用区分更新")
     @RequiresPermissions("role:update")
     @RequestMapping("role/update")
     @ResponseBody
     public ResponseBo updateRole(Role role, Long[] menuId) {
         try {
             this.roleService.updateRole(role, menuId);
-            return ResponseBo.ok("修改角色成功！");
+            return ResponseBo.ok("雇用区分更新成功！");
         } catch (Exception e) {
-            log.error("修改角色失败", e);
-            return ResponseBo.error("修改角色失败，请联系网站管理员！");
+            log.error("雇用区分更新失败", e);
+            return ResponseBo.error("雇用区分更新失败，请联系网站管理员！");
         }
     }
 }

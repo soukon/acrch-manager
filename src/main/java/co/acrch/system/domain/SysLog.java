@@ -53,7 +53,7 @@ public class SysLog implements Serializable {
 	@ExportConfig(value = "地点")
 	private String location;
 	
-	// 用于搜索条件中的时间字段
+	// 用于検索条件中的时间字段
 	@Transient
 	private String timeField;
 

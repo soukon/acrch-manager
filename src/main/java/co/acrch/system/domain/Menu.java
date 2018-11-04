@@ -22,7 +22,7 @@ public class Menu implements Serializable {
 	@Id
 	@GeneratedValue(generator = "JDBC")
 	@Column(name = "MENU_ID")
-	@ExportConfig(value = "编号")
+	@ExportConfig(value = "No.")
 	private Long menuId;
 
 	@Column(name = "PARENT_ID")

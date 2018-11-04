@@ -2,11 +2,11 @@ function updateRole() {
     var selected = $("#roleTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要修改的角色！');
+        $MB.n_warning('雇用区分を選択してください！');
         return;
     }
     if (selected_length > 1) {
-        $MB.n_warning('一次只能修改一个角色！');
+        $MB.n_warning('一つ雇用区分を選択して、更新してください！');
         return;
     }
     var roleId = selected[0].roleId;
@@ -16,7 +16,7 @@ function updateRole() {
             var $menuTree = $('#menuTree');
             $form.modal();
             var role = r.msg;
-            $("#role-add-modal-title").html('修改角色');
+            $("#role-add-modal-title").html('雇用区分更新');
             $form.find("input[name='roleName']").val(role.roleName);
             $form.find("input[name='oldRoleName']").val(role.roleName);
             $form.find("input[name='roleId']").val(role.roleId);

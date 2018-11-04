@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>co.acrch</groupId>
+    <groupId>jp.co.acrch</groupId>
     <artifactId>acrchManager</artifactId>
     <version>2.0</version>
     <packaging>jar</packaging>
 
-    <name>acrch</name>
+    <name>acrch-manager</name>
     <description>Authority Management System</description>
 
     <parent>
@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <poi.version>3.13</poi.version>
+        <poi.version>3.14</poi.version>
         <docker.registry>HOST yours:5000</docker.registry>
         <!-- TODO change here to be your docker registry  IP  -->
         <relativePath/>
@@ -140,6 +140,44 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-jexl -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-jexl</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sf.jagg/jagg-core -->
+        <dependency>
+            <groupId>net.sf.jagg</groupId>
+            <artifactId>jagg-core</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seasar.fisshplate/fisshplate -->
+        <!--<dependency>-->
+        <!--<groupId>org.seasar.fisshplate</groupId>-->
+        <!--<artifactId>fisshplate</artifactId>-->
+        <!--<version>0.1.4</version>-->
+        <!--</dependency>-->
+
+        <!-- JETT -->
+        <dependency>
+            <groupId>net.sf.jett</groupId>
+            <artifactId>jett-core</artifactId>
+            <version>0.10.0</version>
+        </dependency>
 
         <!-- csv -->
         <dependency>
@@ -204,6 +242,7 @@
             <artifactId>jasypt-spring-boot-starter</artifactId>
             <version>2.1.0</version>
         </dependency>
+
     </dependencies>
 
     <repositories>
@@ -211,6 +250,13 @@
             <id>nexus-aliyun</id>
             <name>Nexus aliyun</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+
+        <repository>
+            <id>maven2-repository.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
         </repository>
     </repositories>
 
@@ -305,6 +351,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>acrch</finalName>
+        <finalName>acrch-manager</finalName>
     </build>
 </project>

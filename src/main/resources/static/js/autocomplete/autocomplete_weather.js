@@ -106,7 +106,7 @@
 
             if(params.showButton){
                 //Search button
-                var button = $('<button type="button" onclick="search()" class="btn btn-save">搜索</button>');
+                var button = $('<button type="button" onclick="search()" class="btn btn-save">検索</button>');
                 searchContainer.append(button);
             }
 

@@ -17,16 +17,16 @@ function initTreeTable() {
                 checkbox: true
             },
             {
-                title: '编号',
+                title: 'No.',
                 field: 'deptId',
                 width: '50px'
             },
             {
-                title: '名称',
+                title: '部門名',
                 field: 'deptName'
             },
             {
-                title: '创建时间',
+                title: '作成時間',
                 field: 'createTime'
             }
         ]
@@ -49,7 +49,7 @@ function deleteDepts() {
     var ids = $("#deptTable").bootstrapTreeTable("getSelections");
     var ids_arr = "";
     if (!ids.length) {
-        $MB.n_warning("请勾选需要删除的部门！");
+        $MB.n_warning("削除したい部門を選択してください！");
         return;
     }
     for (var i = 0; i < ids.length; i++) {
@@ -57,8 +57,8 @@ function deleteDepts() {
         if (i !== (ids.length - 1)) ids_arr += ",";
     }
     $MB.confirm({
-        text: "确定删除选中部门？",
-        confirmButtonText: "确定删除"
+        text: "選択した部門を削除します。よろしいでしょうか？",
+        confirmButtonText: "はい"
     }, function() {
         $.post(ctx + 'dept/delete', { "ids": ids_arr }, function(r) {
             if (r.code === 0) {

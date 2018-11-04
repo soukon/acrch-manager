@@ -44,7 +44,8 @@ function validateUpdatePasswordRule() {
             },
             newPassword: {
                 required: true,
-                minlength: 6
+                minlength: 6,
+                maxlength: 16
             },
             confirm: {
                 required: true,
@@ -53,16 +54,16 @@ function validateUpdatePasswordRule() {
         },
         messages: {
             oldPassword: {
-                required: icon + "请输入原密码",
-                remote: icon + "原密码错误"
+                required: icon + "パスワードを入力してください",
+                remote: icon + "パスワードが間違っています"
             },
             newPassword: {
-                required: icon + "请输入新密码",
-                minlength: icon + "密码不能小于6个字符"
+                required: icon + "新しいパスワードを入力してください",
+                minlength: icon + "新しいパスワードを6〜16桁で入力してください"
             },
             confirm: {
-                required: icon + "请再次输入新密码",
-                equalTo: icon + "两次密码输入不一致"
+                required: icon + "（確認用）新しいパスワードを入力してください",
+                equalTo: icon + "（確認用）新しいパスワードが新しいパスワードと不一致です"
             }
 
         }

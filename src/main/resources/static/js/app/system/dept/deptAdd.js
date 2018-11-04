@@ -40,7 +40,7 @@ $(function () {
 
 function closeModal() {
     $("#dept-add-button").attr("name", "save");
-    $("#dept-add-modal-title").html('新增部门');
+    $("#dept-add-modal-title").html('部門追加');
     validator.resetForm();
     $MB.closeAndRestModal("dept-add");
     $MB.refreshJsTree("deptTree", createDeptTree());
@@ -71,9 +71,9 @@ function validateRule() {
         },
         messages: {
             deptName: {
-                required: icon + "请输入部门名称",
-                minlength: icon + "部门名称长度3到10个字符",
-                remote: icon + "该部门名称已经存在"
+                required: icon + "部門名を入力してください",
+                minlength: icon + "部門名を3〜10桁で入力してください",
+                remote: icon + "該当部門が存在しています"
             }
         }
     });

@@ -6,12 +6,12 @@ var redisMemoryInfoInterval;
 var rediskeysSizeInterval;
 
 $(window).on("load", function () {
-    // 加载loading
+    // loading
     setTimeout(function () {
         $(".page-loader").fadeOut();
     }, 500)
 }), $(document).ready(function () {
-    // 设置主题色
+    // テーマ設定
     var theme_color = $MB.getThemeColor(theme);
     var opacity_color = $MB.getThemeRGBA(theme, 0.1);
     var $head = $("head");
@@ -47,7 +47,6 @@ $(window).on("load", function () {
         }
     });
 }), $(document).ready(function () {
-    //使用递归处理菜单
     var str = "";
     var forTree = function (o) {
         for (var i = 0; i < o.length; i++) {
@@ -106,30 +105,29 @@ $(window).on("load", function () {
     })
 
 }), $(document).ready(function () {
-    // 主题切换
+    // テーマ切り替え
     $("body").on("change", ".theme-switch input:radio", function () {
         var a = $(this).val();
         $("body").attr("data-ma-theme", a);
         $.get(ctx + "user/theme", {"theme": a, "username": userName}, function (r) {
-            if (r.code === 0) $MB.n_success("主题更换成功，下次登录时生效！");
+            if (r.code === 0) $MB.n_success("テーマ更新成功しました、次のログインするとき、有効となります。");
         });
     });
-    // 修改个人信息
+    // プロフィール更新
     $(".user__img").attr("src", avatar);
     $("#user__profile").on('click', function () {
         $.post(ctx + "user/profile", function (r) {
-            $breadcrumb.html("").append('<li class="breadcrumb-item">个人信息</li>');
+            $breadcrumb.html("").append('<li class="breadcrumb-item">プロフィール</li>');
             $main_content.html("").append(r);
         });
     });
 });
 
 /**
- * 用于加载菜单内容
+ * メニューローディング
  * @param obj
  */
 function loadMain(obj) {
-    // 设置面包屑
     var $this = $(obj);
     $(".navigation").find("span").removeClass("navigation__active");
     $this.addClass("navigation__active").parents("ul").prev().addClass("navigation__active");
@@ -147,14 +145,14 @@ function loadMain(obj) {
     breadcrumnHtml += '<li class="breadcrumb-item">' + target_text + '</li>';
     $breadcrumb.html("").append(breadcrumnHtml);
 
-    // 加载内容
+    // コンテントローディング
     var $name = $this.attr("name");
     $.post(ctx + $name, {}, function (r) {
         if(r.code === 500){
             $MB.n_danger(r.msg);
             return;
         }
-        if (r.indexOf('账户登录') !== -1) {
+        if (r.indexOf('アカウントログイン') !== -1) {
             location = location;
             return;
         }
@@ -165,14 +163,14 @@ function loadMain(obj) {
 }
 
 /**
- * 全屏切换
+ * フルスクリン切り替え
  * @param obj
  */
 function fullScreen(obj) {
     var $this = $(obj);
     var element;
-    if ($this.text() === '全屏') {
-        $this.text("退出全屏");
+    if ($this.text() === 'フルスクリーン') {
+        $this.text("フルスクリーン解除");
         element = document.documentElement;
         if (element.requestFullscreen) {
             element.requestFullscreen();
@@ -183,12 +181,12 @@ function fullScreen(obj) {
         } else if (element.msRequestFullscreen) {
             element.msRequestFullscreen();
         } else {
-            $MB.n_info("当前浏览器不支持全屏或已被禁用！");
-            $this.text("全屏");
+            $MB.n_info("該当ブラウザをサポートしません");
+            $this.text("フルスクリーン");
         }
     } else {
         elem = document;
-        $this.text("全屏");
+        $this.text("フルスクリーン");
         if (elem.webkitCancelFullScreen) {
             elem.webkitCancelFullScreen();
         } else if (elem.mozCancelFullScreen) {

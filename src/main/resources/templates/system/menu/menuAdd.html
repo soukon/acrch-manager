@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title pull-left" id="menu-add-modal-title">新增菜单/按钮</h3>
+                <h3 class="modal-title pull-left" id="menu-add-modal-title">メニュー/ボタン追加</h3>
             </div>
             <div class="modal-body">
                 <form id="menu-add-form">
@@ -10,7 +10,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	菜单名称：
+					               	メニュー名：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="menuName" class="form-control">
@@ -24,18 +24,18 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-					               	类型选择：
+					               	タイプ：
 					             </span>
                                 <div class="form-group">
                                     <label class="custom-control custom-radio">
                                         <input name="type" type="radio" value="0" checked class="custom-control-input">
                                         <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">菜单</span>
+                                        <span class="custom-control-description">メニュー</span>
                                     </label>
                                     <label class="custom-control custom-radio">
                                         <input name="type" type="radio" value="1" class="custom-control-input">
                                         <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">按钮</span>
+                                        <span class="custom-control-description">ボタン</span>
                                     </label>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	菜单URL：
+					               	メニューURL：
 					            </span>
                                 <div class="form-group">
                                     <div id="menu-url-list" class="form-control">
@@ -59,7 +59,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	权限描述：
+					               	権限シンボル：
 					            </span>
                                 <div class="form-group">
                                     <div id="menu-perms-list" class="form-control">
@@ -73,7 +73,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	菜单图标：
+					               	メニューアイコン：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="icon" class="form-control">
@@ -90,7 +90,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
-					               	上级菜单：
+					               	上級メニュー：
 					             </span>
                                 <div class="form-group">
                                     <div id="menuTree"></div>
@@ -103,7 +103,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-save" id="menu-add-button" name="save">保存</button>
-                <button type="button" class="btn btn-secondary btn-close">关闭</button>
+                <button type="button" class="btn btn-secondary btn-close">閉じる</button>
                 <button class="btn-hide"></button>
             </div>
         </div>

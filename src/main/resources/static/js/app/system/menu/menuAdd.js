@@ -17,11 +17,11 @@ $(function () {
     $menuAddForm.find("input[name='type']").change(function () {
         var $value = $menuAddForm.find("input[name='type']:checked").val();
         if ($value === "0") {
-            $menuName.parent().prev().text("菜单名称：");
+            $menuName.parent().prev().text("メニュー名：");
             $menuUrlListRow.show();
             $menuIconListRow.show();
         } else {
-            $menuName.parent().prev().text("按钮名称：");
+            $menuName.parent().prev().text("ボタン名：");
             $menuUrlListRow.hide();
             $menuIconListRow.hide();
         }
@@ -84,8 +84,8 @@ $(function () {
 });
 
 function closeModal() {
-    $menuName.parent().prev().text("菜单名称：");
-    $("#menu-add-modal-title").html('新增菜单/按钮');
+    $menuName.parent().prev().text("メニュー名：");
+    $("#menu-add-modal-title").html('メニュー/ボタン追加');
     $("#menu-add-button").attr("name", "save");
     $menuUrlListRow.show();
     $menuIconListRow.show();
@@ -123,9 +123,9 @@ function validateRule() {
         },
         messages: {
             menuName: {
-                required: icon + "请输入名称",
-                minlength: icon + "名称长度2到10个字符",
-                remote: icon + "该名称已经存在"
+                required: icon + "メニュー名を入力してください",
+                minlength: icon + "メニュー名を2〜10桁で入力してください",
+                remote: icon + "該当メニュー名が存在しています"
             }
         }
     });

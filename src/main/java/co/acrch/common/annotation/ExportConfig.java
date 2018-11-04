@@ -15,7 +15,7 @@ import org.apache.poi.hssf.util.HSSFColor;
 public @interface ExportConfig {
 
 	/**
-	 * @return 表头显示名(如：id字段显示为"编号") 默认为字段名
+	 * @return 表头显示名(如：id字段显示为"No.") 默认为字段名
 	 */
 	String value() default "field";
 

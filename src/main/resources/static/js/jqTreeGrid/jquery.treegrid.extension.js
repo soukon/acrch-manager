@@ -258,7 +258,7 @@
             }
             return chk_value;
         },
-        // 刷新记录
+        // リフレッシュ记录
         refresh : function(target, parms) {
             if(parms){
                 target.load(parms);

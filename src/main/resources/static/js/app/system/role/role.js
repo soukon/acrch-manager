@@ -13,13 +13,13 @@ $(function () {
             checkbox: true
         }, {
             field: 'roleName',
-            title: '角色'
+            title: '雇用区分'
         }, {
             field: 'remark',
-            title: '描述'
+            title: '区分説明'
         }, {
             field: 'createTime',
-            title: '创建时间'
+            title: '作成時間'
         }]
     };
 
@@ -39,7 +39,7 @@ function deleteRoles() {
     var selected = $("#roleTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要删除的角色！');
+        $MB.n_warning('削除したい雇用区分を選択してください！');
         return;
     }
     var ids = "";
@@ -49,8 +49,8 @@ function deleteRoles() {
     }
 
     $MB.confirm({
-        text: "删除选中角色将导致该角色对应账户失去相应的权限，确定删除？",
-        confirmButtonText: "确定删除"
+        text: "該当雇用区分を削除すると、紐つけるユーザもその権限を消します。よろしいでしょうか？",
+        confirmButtonText: "はい"
     }, function () {
         $.post(ctx + 'role/delete', {"ids": ids}, function (r) {
             if (r.code === 0) {

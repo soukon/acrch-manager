@@ -20,17 +20,17 @@ function initTreeTable() {
                 checkbox: true
             },
             {
-                title: '编号',
+                title: 'No.',
                 field: 'menuId',
                 width: '50px'
             },
             {
-                title: '名称',
+                title: 'メニュー名',
                 field: 'menuName'
             },
 
             {
-                title: '图标',
+                title: 'メニューアイコン',
                 field: 'icon',
                 formatter: function (item, index) {
                     return '<i class="zmdi ' + item.icon + '"></i>';
@@ -38,7 +38,7 @@ function initTreeTable() {
 
             },
             {
-                title: '类型',
+                title: 'タイプ',
                 field: 'type',
                 formatter: function (item, index) {
                     if (item.type === '0') return '<span class="badge badge-success">菜单</span>';
@@ -47,21 +47,21 @@ function initTreeTable() {
 
             },
             {
-                title: '地址',
+                title: 'メニューURL',
                 field: 'url',
                 formatter: function (item, index) {
                     return item.url === 'null' ? '' : item.url;
                 }
             },
             {
-                title: '权限标识',
+                title: '権限シンボル',
                 field: 'perms',
                 formatter: function (item, index) {
                     return item.perms === 'null' ? '' : item.perms;
                 }
             },
             {
-                title: '创建时间',
+                title: '作成時間',
                 field: 'createTime'
             }
         ]
@@ -84,7 +84,7 @@ function deleteMenus() {
     var ids = $("#menuTable").bootstrapTreeTable("getSelections");
     var ids_arr = "";
     if (!ids.length) {
-        $MB.n_warning("请勾选需要删除的菜单或按钮！");
+        $MB.n_warning("削除したいメニューまたはボタンを選択してください！");
         return;
     }
     for (var i = 0; i < ids.length; i++) {
@@ -92,8 +92,8 @@ function deleteMenus() {
         if (i !== (ids.length - 1)) ids_arr += ",";
     }
     $MB.confirm({
-        text: "确定删除选中菜单或按钮？",
-        confirmButtonText: "确定删除"
+        text: "選択したメニューまたはボタンを削除します。よろしいでしょうか？",
+        confirmButtonText: "はい"
     }, function () {
         $.post(ctx + 'menu/delete', {"ids": ids_arr}, function (r) {
             if (r.code === 0) {

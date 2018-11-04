@@ -129,7 +129,7 @@ public class UserController extends BaseController {
         }
     }
 
-    @Log("ユーザ新規")
+    @Log("ユーザ追加")
     @RequiresPermissions("user:add")
     @RequestMapping("user/add")
     @ResponseBody

@@ -4,8 +4,8 @@
         <div class="table-responsive">
             <div id="data-table_wrapper" class="dataTables_wrapper">
                 <div class="dataTables_buttons hidden-sm-down actions">
-                    <span class="actions__item zmdi zmdi-search" onclick="search()" title="搜索" />
-                    <span class="actions__item zmdi zmdi-refresh-alt" onclick="refresh()" title="刷新" />
+                    <span class="actions__item zmdi zmdi-search" onclick="search()" title="検索" />
+                    <span class="actions__item zmdi zmdi-refresh-alt" onclick="refresh()" title="リフレッシュ" />
                     <div class="dropdown actions__item">
                         <i data-toggle="dropdown" class="zmdi zmdi-download"></i>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -20,9 +20,9 @@
                     <div class="dropdown actions__item" shiro:hasAnyPermissions="dept:add,dept:delete,dept:update">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#dept-add" shiro:hasPermission="dept:add">新增部门</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateDept()" shiro:hasPermission="dept:update">修改部门</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteDepts();" shiro:hasPermission="dept:delete">删除部门</a>
+                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#dept-add" shiro:hasPermission="dept:add">部門追加</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateDept()" shiro:hasPermission="dept:update">部門更新</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteDepts();" shiro:hasPermission="dept:delete">部門削除</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-					               	名称：
+					               	部門名：
 					            </span>
                                     <div class="form-group">
                                         <input type="text" name="deptName" class="form-control">

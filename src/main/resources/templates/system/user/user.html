@@ -1,10 +1,10 @@
-<div class="card" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<div class="card">
     <div data-th-include="system/user/userAdd"></div>
     <div class="card-block">
         <div class="table-responsive">
             <div id="data-table_wrapper" class="dataTables_wrapper">
                 <div class="dataTables_buttons hidden-sm-down actions">
-                    <span class="actions__item zmdi zmdi-search" onclick="search()" title="搜索" /> <span class="actions__item zmdi zmdi-refresh-alt" onclick="refresh()" title="刷新" />
+                    <span class="actions__item zmdi zmdi-search" onclick="search()" title="検索" /> <span class="actions__item zmdi zmdi-refresh-alt" onclick="refresh()" title="リフレッシュ" />
                     <div class="dropdown actions__item">
                         <i data-toggle="dropdown" class="zmdi zmdi-download"> </i>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -17,9 +17,9 @@
                     <div class="dropdown actions__item" shiro:hasAnyPermissions="user:add,user:delete,user:update">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="user:add">新增用户</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="user:update">修改用户</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="user:delete">删除用户</a>
+                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="user:add">ユーザ追加</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="user:update">ユーザ更新</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="user:delete">ユーザ削除</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> 用户名： </span>
+                                    <span class="input-group-addon"> ユーザ名： </span>
                                     <div class="form-group">
                                         <input type="text" name="username" class="form-control"> <i class="form-group__bar"></i>
                                     </div>
@@ -36,10 +36,10 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> 性别： </span>
+                                    <span class="input-group-addon"> 性別： </span>
                                     <div class="form-group">
                                         <select class="form-control" name="ssex">
-                                            <option value="" selected>所有</option>
+                                            <option value="" selected>全て</option>
                                             <option value="0">男</option>
                                             <option value="1">女</option>
                                         </select>
@@ -48,12 +48,12 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> 状态： </span>
+                                    <span class="input-group-addon"> 利用ステータス： </span>
                                     <div class="form-group">
                                         <select class="form-control" name="status">
-                                            <option value="" selected>所有</option>
-                                            <option value="0">锁定</option>
-                                            <option value="1">有效</option>
+                                            <option value="" selected>全て</option>
+                                            <option value="0">ロック</option>
+                                            <option value="1">有効</option>
                                         </select>
                                     </div>
                                 </div>

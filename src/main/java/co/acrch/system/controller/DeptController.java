@@ -104,45 +104,45 @@ public class DeptController {
         return result == null;
     }
 
-    @Log("新增部门 ")
+    @Log("部門追加 ")
     @RequiresPermissions("dept:add")
     @RequestMapping("dept/add")
     @ResponseBody
     public ResponseBo addRole(Dept dept) {
         try {
             this.deptService.addDept(dept);
-            return ResponseBo.ok("新增部门成功！");
+            return ResponseBo.ok("部門追加成功！");
         } catch (Exception e) {
-            log.error("新增部门失败", e);
-            return ResponseBo.error("新增部门失败，请联系网站管理员！");
+            log.error("部門追加失败", e);
+            return ResponseBo.error("部門追加失败，请联系网站管理员！");
         }
     }
 
-    @Log("删除部门")
+    @Log("部門削除")
     @RequiresPermissions("dept:delete")
     @RequestMapping("dept/delete")
     @ResponseBody
     public ResponseBo deleteDepts(String ids) {
         try {
             this.deptService.deleteDepts(ids);
-            return ResponseBo.ok("删除部门成功！");
+            return ResponseBo.ok("部門削除成功！");
         } catch (Exception e) {
-            log.error("删除部门失败", e);
-            return ResponseBo.error("删除部门失败，请联系网站管理员！");
+            log.error("部門削除失败", e);
+            return ResponseBo.error("部門削除失败，请联系网站管理员！");
         }
     }
 
-    @Log("修改部门 ")
+    @Log("部門更新 ")
     @RequiresPermissions("dept:update")
     @RequestMapping("dept/update")
     @ResponseBody
     public ResponseBo updateRole(Dept dept) {
         try {
             this.deptService.updateDept(dept);
-            return ResponseBo.ok("修改部门成功！");
+            return ResponseBo.ok("部門更新成功！");
         } catch (Exception e) {
-            log.error("修改部门失败", e);
-            return ResponseBo.error("修改部门失败，请联系网站管理员！");
+            log.error("部門更新失败", e);
+            return ResponseBo.error("部門更新失败，请联系网站管理员！");
         }
     }
 }

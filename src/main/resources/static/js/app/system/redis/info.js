@@ -25,7 +25,7 @@ $(document).ready(function() {
             }
         },
         title: {
-            text: "Redis 内存实时占用情况",
+            text: "Redis メモリ状態",
             style: {
                 "font-size": "1.2rem"
             }

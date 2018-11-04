@@ -17,16 +17,16 @@
         <a href="javascript:void(0)" class="zmdi zmdi-edit profile__img__edit" title="アバター変更"></a>
     </div>
     <div class="actions" style="margin-right: 1rem">
-        <a href="javascript:void(0)" onclick="editUserProfile()" style="color: #707070 !important">更新</a>
+        <input type="button" class="btn btn-save" onclick="editUserProfile()" value="更新" />
     </div>
     <div class="profile__info">
         <ul class="icon-list">
             <li><i class="zmdi zmdi-account"></i> [[${user.username}]] -- [[${user.roleName}]]</li>
             <li><i class="zmdi zmdi-male-female"></i> [[${user.ssex}]]</li>
-            <li><i class="zmdi zmdi-card-travel"></i> [[${#strings.defaultString(user.deptName,'无部门信息')}]]</li>
-            <li><i class="zmdi zmdi-phone"></i> [[${#strings.defaultString(user.mobile,'无电话信息')}]]</li>
-            <li id="profile__info_email"><i class="zmdi zmdi-email"></i><span> [[${#strings.defaultString(user.email,'无邮箱信息')}]]</span></li>
-            <li><i class="zmdi zmdi-comment-text"></i> <span>[[${#strings.defaultString(user.description,'暂无个人介绍')}]]</span></li>
+            <li><i class="zmdi zmdi-card-travel"></i> [[${#strings.defaultString(user.deptName,'なし')}]]</li>
+            <li><i class="zmdi zmdi-phone"></i> [[${#strings.defaultString(user.mobile,'なし')}]]</li>
+            <li id="profile__info_email"><i class="zmdi zmdi-email"></i><span> [[${#strings.defaultString(user.email,'なし')}]]</span></li>
+            <li><i class="zmdi zmdi-comment-text"></i> <span>[[${#strings.defaultString(user.description,'なし')}]]</span></li>
         </ul>
     </div>
 </div>
@@ -34,7 +34,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title pull-left">个人信息</h3>
+                <h3 class="modal-title pull-left">プロフィール</h3>
             </div>
             <div class="modal-body">
                 <form id="update-profile-form">
@@ -42,7 +42,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                  	  用户名：
+                                  	  ユーザ名：
                                 </span>
                                 <div class="form-group">
                                     <input type="text" name="username" class="form-control">
@@ -56,7 +56,7 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-                                    	性别：
+                                    	性別：
                                  </span>
                                 <div class="form-group">
                                     <label class="custom-control custom-radio">
@@ -69,11 +69,6 @@
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description">女</span>
                                     </label>
-                                    <label class="custom-control custom-radio">
-                                        <input name="ssex" type="radio" value="2" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">保密</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +77,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                	     电话：
+                                	     連絡先：
                                 </span>
                                 <div class="form-group">
                                     <input type="text" name="mobile" class="form-control">
@@ -94,7 +89,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                	     邮箱：
+                                	     メール：
                                 </span>
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control">
@@ -106,7 +101,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
-                                 	   部门：
+                                 	   部門：
                                  </span>
                                 <div class="form-group">
                                     <div id="deptTree"></div>
@@ -119,7 +114,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    	 个人描述：
+                                    	 プロフィールメッセージ：
                                 </span>
                                 <div class="form-group">
                                     <input type="text" name="description" class="form-control">
@@ -131,7 +126,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-save">保存</button>
-                <button type="button" class="btn btn-secondary btn-close">关闭</button>
+                <button type="button" class="btn btn-secondary btn-close">閉じる</button>
                 <button class="btn-hide"></button>
             </div>
         </div>
@@ -141,34 +136,34 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title pull-left">更换头像</h3>
+                <h3 class="modal-title pull-left">アヴァター更新</h3>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="row default_avatars_list">
-                    	<img data-th-src="@{img/avatar/default.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165920.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165927.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165754.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165815.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165821.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165827.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165834.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165840.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165846.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165855.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165909.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165914.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165936.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165942.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165947.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414165955.jpg}" title="点击更换！">
-                        <img data-th-src="@{img/avatar/20180414170003.jpg}" title="点击更换！">
+                    	<img data-th-src="@{img/avatar/default.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165920.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165927.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165754.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165815.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165821.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165827.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165834.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165840.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165846.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165855.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165909.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165914.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165936.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165942.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165947.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414165955.jpg}" title="クリック！">
+                        <img data-th-src="@{img/avatar/20180414170003.jpg}" title="クリック！">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-close" id="close_update_avatar_button" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-secondary btn-close" id="close_update_avatar_button" data-dismiss="modal">閉じる</button>
                 <button class="btn-hide"></button>
             </div>
         </div>

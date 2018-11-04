@@ -4,30 +4,30 @@ $(function () {
         pageSize: 100,
         columns: [{
             field: 'username',
-            title: '用户名'
+            title: 'ユーザ名'
         }, {
             field: 'startTimestamp',
-            title: '登录时间'
+            title: 'ログイン時間'
         }, {
             field: 'lastAccessTime',
-            title: '最后访问时间'
+            title: 'ラストアクセス時間'
         }, {
             field: 'host',
-            title: 'IP地址'
+            title: 'ホスト'
         }, {
             field: 'location',
-            title: '登录地点'
+            title: 'ログイン場所'
         }, {
             field: 'status',
-            title: '状态',
+            title: 'ステータス',
             formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">在线</span>';
-                if (value === '0') return '<span class="badge badge-danger">离线</span>';
+                if (value === '1') return '<span class="badge badge-success">オンライン</span>';
+                if (value === '0') return '<span class="badge badge-danger">オフライン</span>';
             }
         }, {
             title: '操作',
             formatter: function (value, row, index) {
-                return "<a href='#' onclick='offline(\"" + row.id + "\",\"" + row.status + "\",\"" + row.username + "\")'>下线</a>";
+                return "<a href='#' onclick='offline(\"" + row.id + "\",\"" + row.status + "\",\"" + row.username + "\")'>キックオフ</a>";
             }
         }]
     };
@@ -37,7 +37,7 @@ $(function () {
 
 function offline(id, status, username) {
     if (status === "0") {
-        $MB.n_warning("该用户已是离线状态！！");
+        $MB.n_warning("該当ユーザが既にオフラインしました！");
         return;
     }
     if (username === userName) {
@@ -45,7 +45,7 @@ function offline(id, status, username) {
     }
     $.get(ctx + "session/forceLogout", {"id": id}, function (r) {
         if (r.code === 0) {
-            $MB.n_success('该用户已强制下线！');
+            $MB.n_success('該当ユーザがキックオフされました！');
             $MB.refreshTable('onlineTable');
         } else {
             $MB.n_danger(r.msg);

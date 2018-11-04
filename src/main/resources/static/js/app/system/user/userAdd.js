@@ -12,7 +12,7 @@ $(function () {
         var checked = $(this).is(":checked");
         var $status_label = $("#status");
         if (checked) $status_label.html('有効');
-        else $status_label.html('無効');
+        else $status_label.html('ロック');
     });
 
     $("#user-add .btn-save").click(function () {
@@ -56,7 +56,7 @@ function closeModal() {
     $userAddForm.find("input[name='username']").removeAttr("readonly");
     $userAddForm.find(".user_password").show();
     $userAddForm.find("input[name='status']").prop("checked", true);
-    $("#user-add-modal-title").html('ユーザ新規');
+    $("#user-add-modal-title").html('ユーザ追加');
     $("#status").html('有効');
     $MB.resetJsTree("deptTree");
     $MB.closeAndRestModal("user-add");
@@ -107,13 +107,13 @@ function validateRule() {
         },
         messages: {
             username: {
-                required: icon + "请输入用户名",
-                minlength: icon + "用户名长度3到10个字符",
-                remote: icon + "用户名已经存在"
+                required: icon + "ユーザ名を入力してください",
+                minlength: icon + "ユーザ名を3〜10で入力してください",
+                remote: icon + "ユーザ名が存在しています"
             },
-            roles: icon + "请选择用户角色",
-            email: icon + "邮箱格式不正确",
-            ssex: icon + "请选择性别"
+            roles: icon + "雇用区分を選択してください",
+            email: icon + "メールのフォーマットが不正です",
+            ssex: icon + "性別を選択してください"
         }
     });
 }
@@ -127,8 +127,8 @@ function initRole() {
         }
         $rolesSelect.html("").append(option);
         var options = {
-            selectAllText: '所有角色',
-            allSelected: '所有角色',
+            selectAllText: '全ての雇用区分',
+            allSelected: '全ての雇用区分',
             width: '100%',
             onClose: function () {
                 $roles.val($rolesSelect.val());
@@ -147,13 +147,13 @@ function createDeptTree() {
             $('#deptTree').jstree({
                 "core": {
                     'data': data.children,
-                    'multiple': false // 取消多选
+                    'multiple': false // 多選を消す
                 },
                 "state": {
                     "disabled": true
                 },
                 "checkbox": {
-                    "three_state": false // 取消选择父节点后选中所有子节点
+                    "three_state": false
                 },
                 "plugins": ["wholerow", "checkbox"]
             });

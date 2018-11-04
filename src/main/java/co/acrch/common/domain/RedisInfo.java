@@ -37,7 +37,7 @@ public class RedisInfo {
         map.put("redis_build_id", "redis_build_id");
         map.put("redis_mode", "运行模式，单机（standalone）或者集群（cluster）");
         map.put("atomicvar_api", "atomicvar_api");
-        map.put("hz", "redis内部调度（进行关闭timeout的客户端，删除过期key等等）频率，程序规定serverCron每秒运行10次。");
+        map.put("hz", "redis内部调度（进行閉じるtimeout的客户端，删除过期key等等）频率，程序规定serverCron每秒运行10次。");
         map.put("executable", "server脚本目录");
         map.put("config_file", "配置文件目录");
         map.put("client_biggest_input_buf", "当前连接的客户端当中，最大输入缓存，用client list命令观察qbuf和qbuf-free两个字段最大值");

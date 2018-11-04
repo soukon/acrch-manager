@@ -1,6 +1,7 @@
 package co.acrch;
 
 import co.acrch.common.config.AcrchProperties;
+import co.acrch.common.util.SpringUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -25,7 +27,8 @@ public class Application {
     private static Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-        log.info("Acrch started up successfully at {} {}", LocalDate.now(), LocalTime.now());
+        ApplicationContext app = SpringApplication.run(Application.class, args);
+        SpringUtil.setApplicationContext(app);
+        log.info("Acrch-Manager started up successfully at {} {}", LocalDate.now(), LocalTime.now());
     }
 }

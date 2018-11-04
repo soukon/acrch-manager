@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title pull-left" id="user-add-modal-title">新增用户</h3>
+                <h3 class="modal-title pull-left" id="user-add-modal-title">ユーザ追加</h3>
             </div>
             <div class="modal-body">
                 <form id="user-add-form">
@@ -10,7 +10,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 用户名：
+					               	 ユーザ名：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="username" class="form-control">
@@ -24,7 +24,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 密码：
+					               	 パスワード：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="password" value="123456" readonly class="form-control">
@@ -36,7 +36,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 邮箱：
+					               	 メール：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control">
@@ -48,7 +48,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 手机：
+					               	 連絡先：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="mobile" class="form-control">
@@ -60,7 +60,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 角色：
+					               	 雇用区分：
 					             </span>
                                 <div class="form-group">
                                     <select multiple="multiple" name="rolesSelect"></select>
@@ -73,14 +73,14 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-					               	状态：
+					               	利用ステータス：
 					             </span>
                                 <div class="toggle-switch">
                                     <input type="checkbox" name="status" checked class="toggle-switch__checkbox">
                                     <i class="toggle-switch__helper"></i>
                                 </div>
                                 <span class="input-group-addon" id="status" style="margin-left: 10px;">
-	                                 	可用
+	                                 	有効
 						             </span>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-					               	性别：
+					               	性別：
 					             </span>
                                 <div class="form-group">
                                     <label class="custom-control custom-radio">
@@ -102,11 +102,6 @@
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description">女</span>
                                     </label>
-                                    <label class="custom-control custom-radio">
-                                        <input name="ssex" type="radio" value="2" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">保密</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +110,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
-					               	部门：
+					               	部門：
 					             </span>
                                 <div class="form-group">
                                     <div id="deptTree"></div>
@@ -128,7 +123,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-save" id="user-add-button" name="save">保存</button>
-                <button type="button" class="btn btn-secondary btn-close">关闭</button>
+                <button type="button" class="btn btn-secondary btn-close">閉じる</button>
                 <button class="btn-hide"></button>
             </div>
         </div>

@@ -28,24 +28,24 @@ $(function () {
             title: 'メール'
         }, {
             field: 'mobile',
-            title: 'Tel'
+            title: '連絡先'
         }, {
             field: 'ssex',
-            title: 'セックス',
+            title: '性別',
             formatter: function (value, row, index) {
                 if (value === '0') return 'メイル';
                 else if (value === '1') return 'フィーメイル';
-                else return 'シークレット';
+                else return '不明';
             }
         }, {
             field: 'crateTime',
             title: '作成時間'
         }, {
             field: 'status',
-            title: 'ステータス',
+            title: '利用ステータス',
             formatter: function (value, row, index) {
                 if (value === '1') return '<span class="badge badge-success">有効</span>';
-                if (value === '0') return '<span class="badge badge-warning">無効</span>';
+                if (value === '0') return '<span class="badge badge-warning">ロック</span>';
             }
         }
 

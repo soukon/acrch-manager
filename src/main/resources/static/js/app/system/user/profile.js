@@ -103,9 +103,9 @@ function validateRule() {
             }
         },
         messages: {
-            email: icon + "邮箱格式不正确",
-            ssex: icon + "请选择性别",
-            description: icon + "个人描述不能超过100个字符"
+            email: icon + "メールのフォーマットが不正です",
+            ssex: icon + "性別を選択してください",
+            description: icon + "プロフィールメッセージを100以内で入力してください"
         }
     });
 }
